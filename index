@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合心爽® 盐酸地尔硫䓬片 - 扩管 解痉 降压 稳心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部导航 */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #c41e3a, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #c41e3a;
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c41e3a;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* 主英雄区 */
+        .hero {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(196, 30, 58, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #c41e3a, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInLeft 0.8s ease;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-text h2 {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 30px;
+            animation: slideInLeft 0.8s ease 0.2s both;
+        }
+        
+        .features {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .feature-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+            animation: fadeInUp 0.6s ease 0.4s both;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-tag:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .product-box {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #c41e3a, #ff6b6b);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(196, 30, 58, 0.3);
+            transform: rotate(-5deg);
+            animation: productFloat 4s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes productFloat {
+            0%, 100% { transform: rotate(-5deg) translateY(0); }
+            50% { transform: rotate(-5deg) translateY(-20px); }
+        }
+        
+        .product-box h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            z-index: 1;
+        }
+        
+        .product-box p {
+            font-size: 18px;
+            z-index: 1;
+        }
+        
+        /* 信息卡片 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c41e3a, #ff6b6b, #667eea);
+            animation: colorWave 3s linear infinite;
+        }
+        
+        @keyframes colorWave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .info-card h3 {
+            color: #c41e3a;
+            margin-bottom: 20px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #c41e3a, #ff6b6b);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .info-card ul {
+            list-style: none;
+        }
+        
+        .info-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+            padding-left: 10px;
+        }
+        
+        .info-card li:hover {
+            background: linear-gradient(90deg, rgba(196, 30, 58, 0.05) 0%, transparent 100%);
+            padding-left: 20px;
+        }
+        
+        .info-card li:last-child {
+            border-bottom: none;
+        }
+        
+        /* 临床应用区 */
+        .clinical-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .clinical-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .clinical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .clinical-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .clinical-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.3);
+            transition: all 0.5s;
+            transform: translate(-50%, -50%);
+        }
+        
+        .clinical-card:hover::after {
+            width: 300%;
+            height: 300%;
+        }
+        
+        .clinical-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .clinical-card h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .clinical-card p {
+            color: #666;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 优势特点 */
+        .advantages {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .advantages h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #c41e3a;
+        }
+        
+        .advantage-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .advantage-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .advantage-item::before {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            opacity: 0.3;
+        }
+        
+        .advantage-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        
+        .advantage-item h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .advantage-item p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        
+        /* 底部 */
+        footer {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-section h4 {
+            color: #c41e3a;
+            margin-bottom: 10px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 30px;
+            }
+            
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 动画按钮 */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c41e3a, #ff6b6b);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(196, 30, 58, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.5s;
+            transform: translate(-50%, -50%);
+        }
+        
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
+        }
+        
+        /* 徽章 */
+        .badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(196, 30, 58, 0.1);
+            color: #c41e3a;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid rgba(196, 30, 58, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .badge:hover {
+            background: #c41e3a;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">合心爽® 盐酸地尔硫䓬片</div>
+                <div class="nav-links">
+                    <a href="#basic">基本信息</a>
+                    <a href="#clinical">临床应用</a>
+                    <a href="#advantages">核心优势</a>
+                    <a href="#safety">安全性</a>
+                    <a href="#guidelines">指南推荐</a>
+                </div>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>合心爽® 盐酸地尔硫䓬片</h1>
+                    <h2>非二氢吡啶类钙离子通道阻滞剂</h2>
+                    <p style="font-size: 18px; color: #666; margin: 20px 0;">
+                        通过作用于心肌、冠状血管、末梢血管的平滑肌以及房室结等部位的钙离子通道，
+                        有效治疗高血压、心绞痛、心律失常
+                    </p>
+                    <div class="features">
+                        <div class="feature-tag">扩管</div>
+                        <div class="feature-tag">解痉</div>
+                        <div class="feature-tag">降压</div>
+                        <div class="feature-tag">稳心</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge">国家医保（甲类）</span>
+                        <span class="badge">国家基本药物</span>
+                        <span class="badge">原研品质</span>
+                    </div>
+                    <a href="#" class="cta-button">了解更多详情</a>
+                </div>
+                <div class="hero-image">
+                    <div class="product-box">
+                        <h3>30mg</h3>
+                        <p>50片/盒</p>
+                        <p style="margin-top: 20px; font-size: 14px;">国药准字H12020126</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="info-grid" id="basic">
+            <div class="info-card">
+                <h3><span class="icon">📋</span>基本信息</h3>
+                <ul>
+                    <li><strong>产品类别：</strong>非二氢吡啶类钙离子通道阻滞剂</li>
+                    <li><strong>批准文号：</strong>国药准字H12020126</li>
+                    <li><strong>规格：</strong>30mg</li>
+                    <li><strong>适应症：</strong>1.心绞痛 2.轻、中度高血压</li>
+                    <li><strong>用法用量：</strong>口服，每次1-2片，每日3-4次</li>
+                    <li><strong>最大剂量：</strong>每日不超过360mg</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3><span class="icon">⚙️</span>作用机制</h3>
+                <ul>
+                    <li>抑制钙离子由细胞外向细胞内的内流</li>
+                    <li>减少细胞内钙离子浓度</li>
+                    <li>扩张冠状和末梢血管</li>
+                    <li>改善心肌肥大</li>
+                    <li>延长房室结传导时间</li>
+                    <li>不改变血清钙浓度</li>
+                </ul>
+            </div>
+        </div>
+        
+        <section class="clinical-section" id="clinical">
+            <h2>临床应用价值</h2>
+            <div class="clinical-grid">
+                <div class="clinical-card">
+                    <h4>💓 治疗冠心病心绞痛</h4>
+                    <p>
+                        • 适用于所有未分型心绞痛<br>
+                        • 治疗变异型心绞痛的首选药物<br>
+                        • 减少心绞痛频次和ST段下移幅度<br>
+                        • 提高运动耐量优于美托洛尔
+                    </p>
+                </div>
+                
+                <div class="clinical-card">
+                    <h4>🎵 治疗心律失常</h4>
+                    <p>
+                        • LVEF>40%房颤患者的首选药物<br>
+                        • 永久性房颤合并射血分数保留患者<br>
+                        • 改善心律相关症状<br>
+                        • 减少NT-proBNP水平
+                    </p>
+                </div>
+                
+                <div class="clinical-card">
+                    <h4>💊 治疗高血压</h4>
+                    <p>
+                        • 降压效果优于利尿剂、β受体阻滞剂<br>
+                        • 特别适用于高血压合并心率增快<br>
+                        • 实现血压与心率同步管理<br>
+                        • 不影响糖脂代谢
+                    </p>
+                </div>
+                
+                <div class="clinical-card">
+                    <h4>🔬 高血压合并慢性肾病</h4>
+                    <p>
+                        • 初始治疗推荐ACEI/ARB+地尔硫䓬<br>
+                        • 有效减少尿白蛋白排泄<br>
+                        • 延缓CKD进展<br>
+                        • 无高钾风险，肝脏代谢为主
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="advantages" id="advantages">
+            <h2>核心优势特点</h2>
+            <div class="advantage-list">
+                <div class="advantage-item">
+                    <h5>心绞痛一线药物</h5>
+                    <p>适用所有未分型心绞痛，β受体阻滞剂禁用时首选</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>温和控心率</h5>
+                    <p>频率依赖性作用，避免过度心动过缓</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>平稳降血压</h5>
+                    <p>不影响心、脑、肾灌注，降压效果确切</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>三效合一</h5>
+                    <p>兼顾降压、降低尿蛋白、抗缺血</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>代谢友好</h5>
+                    <p>不影响糖脂代谢，适合糖尿病患者</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>原醛筛查期推荐</h5>
+                    <p>不干扰ARR指标，筛查洗脱期首选</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>中青年患者优选</h5>
+                    <p>降舒张压突出，无中枢抑制副作用</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h5>安全性高</h5>
+                    <p>360mg/d足剂量时仍然安全耐受</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="clinical-section" id="guidelines">
+            <h2>权威指南推荐</h2>
+            <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 20px; padding: 30px;">
+                <h4 style="color: #c41e3a; margin-bottom: 20px;">国内外权威指南一致推荐</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div>
+                        <h5 style="color: #667eea; margin-bottom: 10px;">2024年最新指南</h5>
+                        <ul style="list-style: none; color: #666;">
+                            <li>• ESC慢性冠状动脉综合征管理指南</li>
+                            <li>• 中国慢性冠脉综合征患者诊治指南</li>
+                            <li>• 非ST段抬高型急性冠脉综合征诊断和治疗指南</li>
+                            <li>• ESC心房颤动管理指南</li>
+                            <li>• 中国高血压防治指南(修订版)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 style="color: #667eea; margin-bottom: 10px;">推荐级别</h5>
+                        <ul style="list-style: none; color: #666;">
+                            <li>• 冠心病心绞痛：<strong>一线推荐</strong></li>
+                            <li>• 心律失常：<strong>I类推荐，B级证据</strong></li>
+                            <li>• 高血压合并症：<strong>推荐</strong></li>
+                            <li>• 血管痉挛性心绞痛：<strong>首选</strong></li>
+                            <li>• 非阻塞性冠状动脉疾病：<strong>一线</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>产品信息</h4>
+                    <p>远大医药（天津）有限公司</p>
+                    <p>原研品质 · 值得信赖</p>
+                </div>
+                <div class="footer-section">
+                    <h4>临床支持</h4>
+                    <p>79份权威指南共识推荐</p>
+                    <p>1974年日本上市 · 1982年FDA批准</p>
+                </div>
+                <div class="footer-section">
+                    <h4>用药咨询</h4>
+                    <p>请遵医嘱使用</p>
+                    <p>详见产品说明书</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 12px; color: #999;">
+                © 2024 合心爽® 盐酸地尔硫䓬片 | 本网页仅供医疗专业人士参考
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // 观察所有卡片
+        document.querySelectorAll('.info-card, .clinical-card, .advantage-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+        
+        // 导航栏滚动效果
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll) {
+                // 向下滚动
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // 向上滚动
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // 添加导航栏过渡效果
+        header.style.transition = 'transform 0.3s ease';
+        
+        // 数字动画
+        function animateValue(element, start, end, duration) {
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+        
+        // 页面加载动画
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // 鼠标跟随效果
+        const hero = document.querySelector('.hero');
+        let mouseX = 0;
+        let mouseY = 0;
+        let currentX = 0;
+        let currentY = 0;
+        
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            mouseX = e.clientX - rect.left - rect.width / 2;
+            mouseY = e.clientY - rect.top - rect.height / 2;
+        });
+        
+        function animate() {
+            currentX += (mouseX - currentX) * 0.05;
+            currentY += (mouseY - currentY) * 0.05;
+            
+            const productBox = document.querySelector('.product-box');
+            if (productBox) {
+                productBox.style.transform = `rotate(-5deg) translateX(${currentX * 0.1}px) translateY(${currentY * 0.1}px)`;
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // 添加点击涟漪效果
+        document.querySelectorAll('.feature-tag, .badge, .advantage-item').forEach(element => {
+            element.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // 为涟漪效果添加样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple-animation 0.6s ease-out;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            .feature-tag, .badge, .advantage-item {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
